@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:\Users\bkb\AndroidStudioProjects\UrChallenge1-Fixed_First\UrChallenge1 2.iml" filepath="C:\Users\bkb\AndroidStudioProjects\UrChallenge1-Fixed_First\UrChallenge1 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UrChallenge1-Fixed_First.iml" filepath="$PROJECT_DIR$/UrChallenge1-Fixed_First.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UrChallenge1-Fixed_First-master.iml" filepath="$PROJECT_DIR$/UrChallenge1-Fixed_First-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UrChallenge2-master.iml" filepath="$PROJECT_DIR$/UrChallenge2-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
