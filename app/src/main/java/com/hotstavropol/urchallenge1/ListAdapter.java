@@ -16,7 +16,7 @@ public class ListAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return DataBase.Disc.length;
+        return DataBase.Disc.size();
     }
 
     @Override
@@ -32,8 +32,8 @@ public class ListAdapter extends BaseAdapter{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.chalenge_layout, viewGroup, false);
-        ((TextView)view.findViewById(R.id.name)).setText(DataBase.Title[i]);
-        ((TextView)view.findViewById(R.id.description)).setText(DataBase.Disc[i]);
+        ((TextView)view.findViewById(R.id.name)).setText(DataBase.Title.get(i));
+        ((TextView)view.findViewById(R.id.description)).setText(DataBase.Disc.get(i));
         return view;
     }
 }

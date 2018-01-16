@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class AddChallengeActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,15 +28,22 @@ public class AddChallengeActivity extends AppCompatActivity {
                 TextView ChallengeTextView = findViewById(R.id.add_challenge_description_editText);
                 String challengeName = NameTextView.getText().toString();
                 String challengeDescription = ChallengeTextView.getText().toString();
+                DataBase.Disc.add(challengeDescription);
+                DataBase.Title.add(challengeName);
                 // TODO db.add(gettext);
                 boolean f = true;
                 String msg;
-                if (f) msg = "Добавлено";
-                else msg = "Что-то пошло не так. Предагаю обвинить разработчиков";
+
+                if (f) {
+                    msg = "Добавлено";
+                }
+                else{
+                    msg = "Что-то пошло не так. Предагаю обвинить разработчиков";
+                }
+
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
     }
 }
-

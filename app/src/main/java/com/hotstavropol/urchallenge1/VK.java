@@ -37,15 +37,17 @@ public class VK extends AppCompatActivity {
                 vkAccessToken = res;
                 DataBase.vk_permission = true;
                 Toast.makeText(getApplicationContext(), "Авторизация прошла успешно", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(VK.this, MenuActivity.class);
-                startActivity(intent);
+                finish();
+                //Intent intent = new Intent(VK.this, MenuActivity.class);
+                //startActivity(intent);
             }
 
             @Override
             public void onError(VKError error) {
                 Toast.makeText(getApplicationContext(), "Ошибка авторизации!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(VK.this, MenuActivity.class);
-                startActivity(intent);
+                finish();
+                //Intent intent = new Intent(VK.this, MenuActivity.class);
+                //startActivity(intent);
             }
         })) {
             super.onActivityResult(requestCode, resultCode, data);
