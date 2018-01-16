@@ -104,8 +104,8 @@ public class Desk3 extends Fragment {
                         String urlImage = vkApiUser.photo_200;
                         Picasso.with(getContext())
                                 .load(urlImage)
-                                .placeholder(R.drawable.land)
-                                .error(R.drawable.land)
+                                .placeholder(R.drawable.web_hi_res_512)
+                                .error(R.drawable.web_hi_res_512)
                                 .into(imageView);
                         super.onComplete(response);
                     }
