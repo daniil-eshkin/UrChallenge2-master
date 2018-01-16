@@ -17,7 +17,7 @@ import com.vk.sdk.api.VKError;
  */
 
 public class VK extends AppCompatActivity {
-    private String[] scope = new String[]{VKScope.MESSAGES, VKScope.FRIENDS, VKScope.WALL};
+    private String[] scope = new String[]{VKScope.MESSAGES, VKScope.FRIENDS, VKScope.WALL, VKScope.PHOTOS};
     private ListView listView;
     public String id;
     public static VKAccessToken vkAccessToken;

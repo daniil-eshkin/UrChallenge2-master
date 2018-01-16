@@ -19,12 +19,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.api.VKApi;
 import com.vk.sdk.api.VKApiConst;
 import com.vk.sdk.api.VKParameters;
 import com.vk.sdk.api.VKRequest;
 import com.vk.sdk.api.VKResponse;
+import com.vk.sdk.api.model.VKApiPhoto;
 import com.vk.sdk.api.model.VKApiUser;
 import com.vk.sdk.api.model.VKList;
 
@@ -81,15 +83,30 @@ public class Desk3 extends Fragment {
         if (DataBase.vk_permission) {
             if (VkBase.name.equals("")) {
                 VKRequest vkRequest = VKApi.users().get(VKParameters.from(VKApiConst.USER_ID, VK.vkAccessToken.userId));
+                VKRequest vkRequest_photo = VKApi.users().get(VKParameters.from(VKApiConst.FIELDS, "photo_200"));
+
                 vkRequest.executeWithListener(new VKRequest.VKRequestListener() {
                     @Override
-                    //Добавка Имени и Аватара пользователя из ВК.
+                    //Добавка Имени пользователя из ВК.
                     public void onComplete(VKResponse response) {
                         VKApiUser vkApiUser = ((VKList<VKApiUser>) response.parsedModel).get(0);
                         TextView textView = inflate.findViewById(R.id.name);
                         textView.setText(vkApiUser.first_name + " " + vkApiUser.last_name);
-                        //  ImageView imageView = inflate.findViewById(R.id.profile_photo);
-                        //  imageView.setImageBitmap();
+                        super.onComplete(response);
+                    }
+                });
+
+                vkRequest_photo.executeWithListener(new VKRequest.VKRequestListener() {
+                    @Override
+                    public void onComplete(VKResponse response) {
+                        VKApiUser vkApiUser = ((VKList<VKApiUser>) response.parsedModel).get(0);
+                        ImageView imageView = inflate.findViewById(R.id.profile_photo);
+                        String urlImage = vkApiUser.photo_200;
+                        Picasso.with(getContext())
+                                .load(urlImage)
+                                .placeholder(R.drawable.land)
+                                .error(R.drawable.land)
+                                .into(imageView);
                         super.onComplete(response);
                     }
                 });
