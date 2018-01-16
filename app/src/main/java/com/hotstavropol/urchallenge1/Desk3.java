@@ -118,6 +118,7 @@ public class Desk3 extends Fragment {
             Toast.makeText(getContext(), "Авторизуйтесь через ВКОНТАКТЕ", Toast.LENGTH_LONG).show();
         }
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
